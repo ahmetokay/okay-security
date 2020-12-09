@@ -1,5 +1,6 @@
 package com.okay.security.core;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Constructor;
@@ -21,10 +22,6 @@ public abstract class AbstractBaseConverter<D extends BaseModel, E extends BaseE
         this.entityClass = (Class<E>) (((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
     }
 
-    protected abstract void doConvertToDto(D dto, E entity);
-
-    protected abstract void doConvertToEntity(E entity, D dto);
-
     public Set<D> convertToDtoSet(Collection<E> entitySet) {
         return entitySet == null ? null
                 : entitySet.stream().map(this::convertToDto).collect(Collectors.toSet());
@@ -40,8 +37,7 @@ public abstract class AbstractBaseConverter<D extends BaseModel, E extends BaseE
         }
 
         D dto = createDto();
-        doConvertToDto(dto, entity);
-        dto.setId(entity.getId());
+        BeanUtils.copyProperties(entity, dto);
         return dto;
     }
 
@@ -60,8 +56,7 @@ public abstract class AbstractBaseConverter<D extends BaseModel, E extends BaseE
         }
 
         E entity = createEntity();
-        doConvertToEntity(entity, dto);
-        entity.setId(dto.getId());
+        BeanUtils.copyProperties(dto, entity);
         return entity;
     }
 
