@@ -12,7 +12,7 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:8-jre-alpine3.9
 COPY --from=build /home/app/target/okay-security-1.0-SNAPSHOT-spring-boot.jar /okay-security.jar
 EXPOSE 5555
-ENTRYPOINT ["java","-jar","/okay-security.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar","/okay-security.jar"]
 
 
 #FROM openjdk:8-jre-alpine3.9
