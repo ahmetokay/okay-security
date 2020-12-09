@@ -2,7 +2,7 @@ server:
   port: 5555
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/role_db
+    url: jdbc:postgresql://postgres-docker:5432/role_db
     username: postgres
     password: postgres
   jpa:
