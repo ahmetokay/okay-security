@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "RL_USER")
+@Table(name = "RL_USER", schema = "PUBLIC")
 public class User extends BaseEntity {
 
     @Column(name = "NAME")
