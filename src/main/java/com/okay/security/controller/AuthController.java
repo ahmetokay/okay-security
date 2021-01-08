@@ -1,6 +1,7 @@
 package com.okay.security.controller;
 
 import com.okay.security.constant.RoleConstants;
+import com.okay.security.core.FilterModel;
 import com.okay.security.model.UserDto;
 import com.okay.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
@@ -30,6 +33,14 @@ public class AuthController {
         } else {
             return new ResponseEntity<>(userDto, HttpStatus.OK);
         }
+    }
+
+    @PreAuthorize("permitAll()")
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
+    public ResponseEntity<List<UserDto>> list(@RequestBody FilterModel filterModel) {
+        List<UserDto> userDtoList = userService.list(filterModel);
+
+        return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
     @PreAuthorize("permitAll()")

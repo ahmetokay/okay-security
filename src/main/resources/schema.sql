@@ -42,8 +42,22 @@ INSERT INTO "rl_role" (pkid, name, description) VALUES (DEFAULT, 'ROLE_B', 'Rol 
 INSERT INTO "rl_role" (pkid, name, description) VALUES (DEFAULT, 'ROLE_C', 'Rol C Açıklama');
 
 INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Ahmet', 'Okay', 'ahmet', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Ahmet Yılmaz', 'Yılmaz', 'ahmetyilmaz', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Ahmet Yıkılmaz', 'Yıkılmaz', 'ahmetyikilmaz', '123');
 INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Hasan', 'Okay', 'hasan', '123');
-INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Hüseyin', 'Okay', 'huseyin', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Hüseyin', 'Yıkılmaz', 'huseyin', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Mahmut', 'Okay', 'mahmut', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Mehmet', 'Okay', 'mehmet', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Müfide', 'Yıkılmaz', 'mufide', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Alp', 'Okay', 'alp', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Turkuaz', 'Okay', 'turkuaz', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Mert', 'Okay', 'mert', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Özhan', 'Okay', 'ozhan', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Gökhan', 'Yılmaz', 'gokhan', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Bilal', 'Okay', 'bilal', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Haluk', 'Okay', 'haluk', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Esin', 'Yılmaz', 'esin', '123');
+INSERT INTO "rl_user" (pkid, name, surname, username, password) VALUES (DEFAULT, 'Banu', 'Okay', 'banu', '123');
 
 INSERT INTO "rl_user_role" (pkid, fk_user_id, fk_role_id) VALUES (DEFAULT, 1, 1);
 INSERT INTO "rl_user_role" (pkid, fk_user_id, fk_role_id) VALUES (DEFAULT, 2, 2);
